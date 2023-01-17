@@ -17,9 +17,10 @@ public class Manager {
 	private Manager() {}
 	
 	
-	public static void createCourier(String username, int maxWeight) {
+	public static Courier createCourier(String username, int maxWeight) {
 			Courier c = new Courier(username, maxWeight);
 			couriers.add(c);
+			return c;
 	}
 	
 	public static void removeCourier(String username) {

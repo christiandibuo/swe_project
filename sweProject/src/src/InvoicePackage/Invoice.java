@@ -29,24 +29,24 @@ public class Invoice {
     	}
     }
     public String getOrderNumber() {
-        return orderNumber;
+        return this.orderNumber;
     }
 
     public float getTotalPrice() {
-        return totalPrice;
+        return this.totalPrice;
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
     
 
     public PaymentOption getPaymentOption() {
-        return paymentOption;
+        return this.paymentOption;
     }
 
     public ShipmentOption getShipmentOption() {
-        return shipmentOption;
+        return this.shipmentOption;
     }
     
     

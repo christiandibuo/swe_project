@@ -24,7 +24,9 @@ public class User{
     public AbstractProduct searchProduct(String nameOfProduct){
         return catalog.search(nameOfProduct);
     }
-    
+    public int searchNumberProduct(String nameOfProduct) {
+    	return catalog.searchNumber(nameOfProduct);
+    }
     public int getCartProductNumber() {
     	return cart.getnProducts();
     }

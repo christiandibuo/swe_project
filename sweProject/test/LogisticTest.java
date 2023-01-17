@@ -39,9 +39,5 @@ public class LogisticTest {
 		courierList.get(0).shipmentCompleted();
 		assertEquals(CourierStatus.AVAIABLE, courierList.get(0).getStatus());
 	}
-	
-
-
-	
 
 }

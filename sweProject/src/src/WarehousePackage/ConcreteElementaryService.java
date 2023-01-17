@@ -14,6 +14,8 @@ public class ConcreteElementaryService extends ConcreteProduct{
    
     public ConcreteElementaryService(AbstractProduct ap, int serialNumber){
     	super(ap);
+    	this.condition = super.getCondition();
+    	this.name = super.getName();
         this.serialNumber = serialNumber;
     }
     
@@ -36,7 +38,7 @@ public class ConcreteElementaryService extends ConcreteProduct{
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public String getPosition() {
@@ -44,7 +46,7 @@ public class ConcreteElementaryService extends ConcreteProduct{
 	}
 
 	public Condition getCondition() {
-		return condition;
+		return this.condition;
 	}
     
     

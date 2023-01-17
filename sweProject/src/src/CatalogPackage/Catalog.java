@@ -33,6 +33,23 @@ public class Catalog implements Observer {
         return tmp;
     }
     
+    public int searchNumber(String nameOfProduct) throws NoSuchElementException {
+        int tmp = -1;
+        Object l[] = abstractProductMap.keySet().toArray();
+        for (int i = 0; i < abstractProductMap.size(); i++) {
+            if (Objects.equals(((AbstractProduct)l[i]).getName(), nameOfProduct)){
+            	if(abstractProductMap.get((AbstractProduct)l[i]) == 0) {
+            		throw new NoSuchElementException("Product not avaiable!");
+            	}else {
+                    tmp = abstractProductMap.get((AbstractProduct)l[i]);
+            	}
+            }
+        }
+        if(tmp == -1)
+            throw new NoSuchElementException("Don't exist any product with that name!");
+        return tmp;
+    }
+    
     @Override
     public void add(src.ObserverPackage.Observable o, Object arg, int number) {
     	if(abstractProductMap.get((AbstractProduct)arg) == null) {

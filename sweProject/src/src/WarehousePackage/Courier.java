@@ -23,7 +23,9 @@ public class Courier {
 	            return increaseWeight(weightP);
 	    }
 	    
-		
+		public int getnProducts() {
+			return products.size();
+		}
 		
 	    private int increaseWeight(int prodWeight) {
 	    	int diffweight = 0;

@@ -39,22 +39,14 @@ public class Logistic {
 			i++;
 		}return false;
 	}
-	protected Invoice checkOrderNumber(String orderNumber) {
-		int i = 0;
-		while(i < invoices.size()) {
-			if(invoices.get(i).getOrderNumber() == orderNumber)
-				return invoices.remove(i); 
-			i++;
-		}throw new NoSuchElementException("Order Number is not correct");
-		
-	}
 	
-	public void makeShipment(String orderNumber, List<Courier> courierList) throws NoSuchElementException, ElementaryServiceException{
-		Invoice invoice = checkOrderNumber(orderNumber);
-		
+	
+	public void makeShipment(List<Courier> courierList) throws NoSuchElementException, ElementaryServiceException{
+		Invoice invoice = invoices.get(0);
 		for (Map.Entry<AbstractProduct, Integer> set :invoice.getProductMap().entrySet()) {
 			for(int j = 0; j < set.getValue(); j++) {
 				ConcreteProduct cp = makeConcreteProduct(set.getKey(), invoice.getAddress());
+				
 				if(invoice.getShipmentOption() == ShipmentOption.COURIER_SHIPMENT) {
 					if(!chooseCourier(cp, courierList))
 						throw new RuntimeException("All Courier are busy");
@@ -65,7 +57,7 @@ public class Logistic {
 		}
 	}
 	
-	protected ConcreteProduct makeConcreteProduct(AbstractProduct ap, String shippingAddress) throws NoSuchElementException, ElementaryServiceException {
+	public ConcreteProduct makeConcreteProduct(AbstractProduct ap, String shippingAddress) throws NoSuchElementException, ElementaryServiceException {
 		ConcreteProduct cp;
 		if(ap.getChild().size() == 1) {
     		cp = warehouse.getConcreteElementaryService(ap);

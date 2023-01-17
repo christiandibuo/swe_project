@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User{
-    private List<Invoice> invoiceList = new ArrayList<>();
+    private List<String> invoiceList = new ArrayList<>();
     private Catalog catalog;
     private String id;
 	private String username;
@@ -53,7 +53,7 @@ public class User{
         if(cart.getProductSize() != 0){
 	        orderBuilder.createOrder(id, new Cart(cart) , orderCounter, paymentOption, shipmentOption, address);
 	        cart.clear();
-	        invoiceList.add(orderBuilder.getOrder());
+	        invoiceList.add(orderBuilder.getOrder().getOrderNumber());
         }else {
         	throw new Exception("the cart is empty");
         }

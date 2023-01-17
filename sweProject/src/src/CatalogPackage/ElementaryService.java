@@ -22,9 +22,9 @@ public class ElementaryService extends AbstractProduct {
 		ab.products.add(this);
 	}
 	
-	public List <AbstractProduct>  justDescribe(){
-		return null;
-	}
+//	public List <AbstractProduct>  justDescribe(){
+//		return null;
+//	}
 
 	@Override
 	public int getWeight() {

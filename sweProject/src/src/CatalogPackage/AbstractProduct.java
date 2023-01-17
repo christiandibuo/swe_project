@@ -51,7 +51,7 @@ public abstract class AbstractProduct{
 		return products;
 	}
 	
-	public abstract List <AbstractProduct>  justDescribe();
+//	public abstract List <AbstractProduct>  justDescribe();
 	
 	int childrenNumber(){
 		return 0;

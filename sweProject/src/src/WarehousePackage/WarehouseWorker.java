@@ -32,7 +32,7 @@ public class WarehouseWorker extends Observable{
     	concreteElementaryProducts = ap.getChild();
     	for(int i = 0; i < number; i++) {
 			for (AbstractProduct j : concreteElementaryProducts) {
-				ConcreteProduct cp = new ConcreteElementaryService(j, setSerialNumber());
+				ConcreteElementaryService cp = new ConcreteElementaryService(j, setSerialNumber());
 				warehouse.addConcreteElementaryService(cp,1);
 			}
 		}

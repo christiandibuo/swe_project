@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class Warehouse{
-    private List <ConcreteProduct> concreteElementaries = new ArrayList<>();
+    private List <ConcreteElementaryService> concreteElementaries = new ArrayList<>();
     private List <ConcreteProduct> productsSold = new ArrayList<>();
     
     private static Warehouse instance = null;
@@ -25,7 +25,7 @@ public class Warehouse{
         return instance;
     }
 
-    public void addConcreteElementaryService(ConcreteProduct cp, int number) {
+    public void addConcreteElementaryService(ConcreteElementaryService cp, int number) {
     	for(int i = 0; i<number; i++) {
     		concreteElementaries.add(cp);
     	}
@@ -35,8 +35,8 @@ public class Warehouse{
     	productsSold.add(cp);
     }
     
-    public ConcreteProduct getConcreteElementaryService(AbstractProduct ap)throws NoSuchElementException {
-    	for(ConcreteProduct i: concreteElementaries) {
+    public ConcreteElementaryService getConcreteElementaryService(AbstractProduct ap)throws NoSuchElementException {
+    	for(ConcreteElementaryService i: concreteElementaries) {
     		if(i.getName() == ap.getName() && i.getCondition() == ap.getCondition()) {
     			concreteElementaries.remove(i);
     			return i;

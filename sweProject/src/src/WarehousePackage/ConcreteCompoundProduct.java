@@ -4,20 +4,23 @@ import java.util.List;
 import java.util.Vector;
 
 import src.CatalogPackage.AbstractProduct;
+import src.CatalogPackage.Condition;
 
-public class ConcreteCompoundProduct extends ConcreteProduct {
+public class ConcreteCompoundProduct implements ConcreteProduct {
 
 	private Vector children;
 	private int numberOfProduct;
 	private int weight;
 	private String shippingAddress;
+	private String name;
+	
 	public ConcreteCompoundProduct(AbstractProduct ap, String shippingAddress) {
-		super(ap);
+    	this.name = ap.getName();
 		this.shippingAddress = shippingAddress;
 		children = new Vector();
 	}
 
-	public void add(ConcreteProduct p){
+	public void add(ConcreteElementaryService p){
 		children.addElement(p);
 	}
 	
@@ -45,6 +48,17 @@ public class ConcreteCompoundProduct extends ConcreteProduct {
 	@Override
 	public int getWeight() {
 		return weightCalculator();
+	}
+
+	@Override
+	public Condition getCondition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 

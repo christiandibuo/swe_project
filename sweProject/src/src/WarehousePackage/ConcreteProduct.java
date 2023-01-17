@@ -9,33 +9,13 @@ import src.CatalogPackage.ElementaryServiceException;
 
 
 
-public abstract class ConcreteProduct {
-	private String name;
-	private src.CatalogPackage.Condition condition;
-	private List <ConcreteProduct> products = new ArrayList<>();
-	protected int weight;
-
-
-	public ConcreteProduct(AbstractProduct ap) {
-		this.name = ap.getName();
-		this.condition = ap.getCondition();
-		this.weight = ap.getWeight();
-	}
-	
-	public ConcreteProduct() {}
+public interface ConcreteProduct {
 	
 	
-	public src.CatalogPackage.Condition getCondition(){
-		return condition;
-	}
-	public String getName(){
-		return name;
-	}
+	public src.CatalogPackage.Condition getCondition();
+	public String getName();
 	
-	public void add(ConcreteProduct p)throws ElementaryServiceException {
-	       if (this instanceof ConcreteElementaryService)
-	    	   throw new ElementaryServiceException();
-	}
+	public void add(ConcreteElementaryService p);
 	
 	public abstract int getWeight();
 

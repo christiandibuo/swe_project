@@ -36,16 +36,16 @@ public class CompoundProduct extends AbstractProduct {
 		}
 	}
 	
-	public List <AbstractProduct>  justDescribe() {
-		int vLength = children.size();
-		List <AbstractProduct> products = new ArrayList<>();
-		for (int i = 0; i < vLength; i++) {
-			AbstractProduct p = children.get(i);
-			products.add(p);
-		}
-		return 	products;
-	
-	}
+//	public List <AbstractProduct>  justDescribe() {
+//		int vLength = children.size();
+//		List <AbstractProduct> products = new ArrayList<>();
+//		for (int i = 0; i < vLength; i++) {
+//			AbstractProduct p = children.get(i);
+//			products.add(p);
+//		}
+//		return 	products;
+//	
+//	}
 
 	public void remove(AbstractProduct p, int numberOfProduct) throws ElementaryServiceException {
 		for(int i=0; i<numberOfProduct; i++){

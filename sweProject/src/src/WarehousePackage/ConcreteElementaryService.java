@@ -4,8 +4,10 @@ import java.util.List;
 
 import src.CatalogPackage.AbstractProduct;
 import src.CatalogPackage.Condition;
+import src.CatalogPackage.ElementaryService;
+import src.CatalogPackage.ElementaryServiceException;
 
-public class ConcreteElementaryService extends ConcreteProduct{
+public class ConcreteElementaryService implements ConcreteProduct{
     private int serialNumber;
     private String name;
     private int weight;
@@ -13,9 +15,8 @@ public class ConcreteElementaryService extends ConcreteProduct{
     private Condition condition;
    
     public ConcreteElementaryService(AbstractProduct ap, int serialNumber){
-    	super(ap);
-    	this.condition = super.getCondition();
-    	this.name = super.getName();
+    	this.condition = ap.getCondition();
+    	this.name = ap.getName();
         this.serialNumber = serialNumber;
     }
     
@@ -49,5 +50,7 @@ public class ConcreteElementaryService extends ConcreteProduct{
 		return this.condition;
 	}
     
+	public void add(ConcreteElementaryService p){
+	}
     
 }

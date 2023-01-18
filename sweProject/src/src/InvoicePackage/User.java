@@ -49,8 +49,8 @@ public class User{
 
     public void makeOrder(String paymentOption, String shipmentOption, String address)throws Exception{
         InvoiceBuilder orderBuilder = new InvoiceBuilder();
-        orderCounter++;
         if(cart.getProductSize() != 0){
+            orderCounter++;
 	        orderBuilder.createOrder(id, new Cart(cart) , orderCounter, paymentOption, shipmentOption, address);
 	        cart.clear();
 	        invoiceList.add(orderBuilder.getOrder().getOrderNumber());

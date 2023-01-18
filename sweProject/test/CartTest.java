@@ -18,12 +18,12 @@ public class CartTest {
 		cm = new CatalogWorker("franco");
 		
 		cm.createElementaryService("sedia", 10, "NEW", 7);
-		cm.createElementaryService("tavolo", 20, "NEW", 33);
+		cm.createElementaryService("tavolo_nuovo", 20, "NEW", 33);
 		cm.createCompoundProduct("tavolo_cucina");
 		
 		try {
 			cm.addServiceToCompound("tavolo_cucina", "sedia", 4);
-			cm.addServiceToCompound("tavolo_cucina", "tavolo", 1);
+			cm.addServiceToCompound("tavolo_cucina", "tavolo_nuovo", 1);
 		} catch (ElementaryServiceException e) {
 			e.printStackTrace();
 		}
@@ -31,10 +31,10 @@ public class CartTest {
 		cm.addToCatalog("tavolo_cucina", 5);
 		
 	
-		AbstractProduct ap = cm.getAbstractProduct("tavolo_cucina");
-		cart.addProduct(ap, 1);
+		
+		cart.addProduct(cm.getAbstractProduct("tavolo_cucina"), 1);
 		cart.addProduct(cm.getAbstractProduct("sedia"), 2);
-		totPriceExpected += 80;
+		totPriceExpected = 80;
 	}
 	
 	@Test

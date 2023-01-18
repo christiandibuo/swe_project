@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.management.RuntimeErrorException;
+
 public class CatalogWorker extends Observable{
 	WarehouseWorker warehouseworker = new WarehouseWorker(001);
 	Catalog catalog;
@@ -32,6 +34,8 @@ public class CatalogWorker extends Observable{
 	}
 	
     public void createElementaryService(String nameOfProduct, float price, String condition, int weight) {
+    	if(abstractProductMap.get(nameOfProduct) != null && abstractProductMap.get(nameOfProduct).getCondition() == Condition.valueOf(condition))
+    		throw new RuntimeException("that elementary service exist already");
     	AbstractProduct p = new ElementaryService(nameOfProduct, price, condition, weight);
     	abstractProductMap.put(nameOfProduct, p);
 //		return p;

@@ -31,6 +31,8 @@ public class CatalogTest {
 			e.printStackTrace();
 		}
 		cw.addToCatalog("sedia", 10);
+		
+		cw.addToCatalog("tavolo", 10);
 	}
 	
 	@Test
@@ -55,8 +57,6 @@ public class CatalogTest {
 
 	@Test
 	public void updateCartTest() {
-		cw.createElementaryService("tavolo", 20, "NEW", 33);
-		cw.addToCatalog("tavolo", 10);
 		
 		u1.searchProduct("tavolo");
 		u1.addToCart("tavolo", 10);
